@@ -1,0 +1,15 @@
+from datetime import datetime
+
+
+def get_days_from_today(date):
+    try:
+        current_date = datetime.today().date()
+        parsed_date = datetime.strptime(date, "%Y-%m-%d").date()
+        return (current_date - parsed_date).days
+    except ValueError:
+        return f"{date} - не похоже на дату.\n"
+
+print(get_days_from_today("2021-10-09"))
+# user_date = input("Введіть дату (РРРР-ММ-ДД):")
+# my_result = get_days_from_today(user_date)
+# print(my_result)
